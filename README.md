@@ -7,10 +7,11 @@
 > 
 > Następnie będziemy implementować algorytmy przeszukiwania tego labiryntu z ich graficznymi wizualizacjami 
 > 
->  Algi takie jak np.: 
+>  Algorytmy takie jak np.: 
 > * BFS
 > * DFS
 > * A*
+> * Prima
 > * Dijkstra
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
 
