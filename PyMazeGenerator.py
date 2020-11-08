@@ -6,7 +6,7 @@ visited = []
 queue = []
 x = 1
 y = 1
-
+# Testowy komentarz
 print("Podaj rozmiar labiryntu")
 s = input()
 
