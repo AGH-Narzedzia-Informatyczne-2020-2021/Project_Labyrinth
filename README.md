@@ -13,3 +13,13 @@
 > * A*
 > * Dijkstra
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
+
+---
+
+Osoby tworzące projekt:
+* Paweł Magnuszewski
+* Hanna Jarlaczyńska
+* Bartosz Kruczek
+* Konrad Pawlik
+* Łukasz Aszman
+* Filip Chmielowiec
