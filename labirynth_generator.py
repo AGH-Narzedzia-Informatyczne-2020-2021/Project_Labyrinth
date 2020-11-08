@@ -1,4 +1,13 @@
+import pygame
 import random
+import time
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+PINK = (255, 0, 255)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 
 
 class Maze:
@@ -64,10 +73,45 @@ class Maze:
         return string
 
 
-if __name__ == "__main__":
+def main():
     maze = Maze(20, 20)
     maze.create_maze(1, 1)
-    print(maze)
-    print('\n \n \n ')
-    for row in maze.cells:
-      print(row, '\n')
+
+    # maze = Maze(20, 20)
+    # maze.create_maze(1, 1)
+    # print(maze)
+    # print('\n \n \n ')
+    # for row in maze.cells:
+    #     print(row, '\n')
+
+    # Initialize the pygame
+    pygame.init()
+    WIDTH = 600
+    once = False
+    HEIGHT = 600
+    pygame.init()
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("Generator labiryntów")
+    clock = pygame.time.Clock()
+    running = True
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        screen.fill((BLACK))
+        if once == False:
+            for y in range(maze.height):
+                for x in range(maze.width):
+                    if maze.cells[y][x] == 0:
+                        pygame.draw.rect(screen, WHITE, (x * 32 - 32, y * 32 - 32, 32, 32))
+                        pygame.display.update()
+                        time.sleep(.003)
+                        once = True
+
+       # pygame.display.flip()
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
