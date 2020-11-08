@@ -21,5 +21,5 @@ Osoby tworzące projekt:
 * Hanna Jarlaczyńska
 * Bartosz Kruczek
 * Konrad Pawlik
-* Łukasz Aszman
+* Łukasz Starzyk
 * Filip Chmielowiec
