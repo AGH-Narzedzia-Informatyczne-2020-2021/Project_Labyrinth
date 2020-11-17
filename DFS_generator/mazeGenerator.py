@@ -1,16 +1,17 @@
-import random
-
+#
 #                        2 2 2                             0 1 2
 #                       1 1 1 1                           0 1 2 3
 #   Współrzędna x:     0 0 0 0 0     Współrzędna y:      0 1 2 3 4
 #                      -1-1-1-1                           0 1 2 3
 #                       -2-2-2                             0 1 2
-
+#
 #   Każda komóka posiada 2 współrzędne (x,y) gdzie x to numer wiersza, a y to numer komórki w tym wierszu
 #   dla labiryntu o rozmiarze <size> (ilość pierścieni licząc komórkę środkową) x,y moga przyjmować wartosci z ponizszych przedzialow:
 #   x € <-(size-1), size-1>
 #   y € <0, 2(size-1) - abs(x)>
 #   każda z komórek ma ściane w kierunku NE, E, SE, SW, W, NW
+
+import random
 
 NE, E, SE, SW, W, NW = ("ne", "e", "se", "sw", "w", "nw")
 
@@ -56,6 +57,7 @@ class Maze:
     def __init__(self, size=10):
         self.size = size
         self.cells = []
+        self.cells_queue = []
         for x in range(1 - self.size, self.size):
             for y in range(0, 2 * (self.size - 1) - abs(x) + 1):
                 self.cells.append(Cell(x, y, [NE, E, SE, SW, W, NW]))
@@ -66,7 +68,7 @@ class Maze:
         y = new_y
         cell_index = 0
         if 1 - self.size <= x <= self.size - 1 and 0 <= y <= 2 * (self.size - 1) - abs(x):
-            
+
             for n in range(1 - self.size, x):
                 cell_index += 2 * (self.size - 1) - abs(n) + 1
 
@@ -74,7 +76,6 @@ class Maze:
             return self.cells[cell_index]
         else:
             return None
-
 
     # dla podanej komórki zwraca wszystkie możliwe komórki z którymi się styka bokiem
     def neighbours(self, cell):
@@ -103,8 +104,9 @@ class Maze:
         cell_stack = []
         current_cell = random.choice(self.cells)
         visited_cells = 1
+        self.cells_queue.append(current_cell)
 
-     #   print(current_cell, "numer komorki: " + str(visited_cells))     #zwraca kolejne komórki które są odwiedzane podczas tworzenia
+        # print(current_cell, "numer komorki: " + str(visited_cells))     #zwraca kolejne komórki które są odwiedzane podczas tworzenia
 
         while visited_cells < len(self.cells):
             neighbours = [c for c in self.neighbours(current_cell) if c.is_walled()]
@@ -114,7 +116,8 @@ class Maze:
                 cell_stack.append(current_cell)
                 visited_cells += 1
                 current_cell = neighbour
-         #       print(current_cell, "numer komorki: " + str(visited_cells))
+                self.cells_queue.append(current_cell)
+                # print(current_cell, "numer komorki: " + str(visited_cells))
             else:
                 current_cell = cell_stack.pop()
 
