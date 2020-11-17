@@ -2,8 +2,26 @@ import mazeGenerator
 import pygame
 import math
 
+
+def drawPos():
+    n_st = maze.start_cell.x
+    m_st = maze.start_cell.y
+    x_st = x_0 + radius * (abs(n_st) + 2 * m_st) * offset
+    y_st = y_0 - 3 * radius * n_st / 2
+    pygame.draw.circle(screen, 0x9B04C9, (x_st, y_st), radius * (3 / 5))
+
+    n_fn = maze.finish_cell.x
+    m_fn = maze.finish_cell.y
+    x_fn = x_0 + radius * (abs(n_fn) + 2 * m_fn) * offset
+    y_fn = y_0 - 3 * radius * n_fn / 2
+    pygame.draw.circle(screen, 0xFF0000, (x_fn, y_fn), radius * (3 / 5))
+
+    pygame.display.update()
+
+
 try:
     import pyautogui
+
     (width, height) = pyautogui.size()
     mon_width = int(width * (92 / 100))
     mon_height = int(height * (92 / 100))
@@ -46,7 +64,6 @@ while not exit:
             m = cell.y
             x_k = x_0 + radius * (abs(n) + 2 * m) * offset
             y_k = y_0 - 3 * radius * n / 2
-            cell = maze.get_cell(n, m)
 
             if mazeGenerator.NE in cell.walls:
                 # NE
@@ -96,9 +113,12 @@ while not exit:
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
+        drawPos()
+
         Drawed = True
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit = True
+
 pygame.quit()

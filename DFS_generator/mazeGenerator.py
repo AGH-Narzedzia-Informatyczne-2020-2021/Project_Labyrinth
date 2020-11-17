@@ -18,10 +18,24 @@ NE, E, SE, SW, W, NW = ("ne", "e", "se", "sw", "w", "nw")
 
 class Cell:
 
+    # Zna: wspólrzedne x, y; sciany
+
     def __init__(self, x, y, walls):
         self.x = x
         self.y = y
         self.walls = set(walls)
+
+    def __eq__(self, other):
+        if self.x == other.x and self.y == other.y:
+            return True
+        else:
+            return False
+
+    def __ne__(self, other):
+        if self.x != other.x or self.y != other.y:
+            return True
+        else:
+            return False
 
     def __str__(self):
         return 'Cell(' + str(self.x) + ', ' + str(self.y) + ', ' + str(self.walls) + ')'
@@ -39,25 +53,33 @@ class Cell:
     def wall_to(self, other):
         if other.x - self.x == 1 and ((self.x >= 0 and other.y == self.y) or (self.x < 0 and other.y - self.y == 1)):
             return NE
+
         elif other.x == self.x and other.y - self.y == 1:
             return E
+
         elif other.x - self.x == -1 and ((self.x > 0 and other.y - self.y == 1) or (self.x <= 0 and other.y == self.y)):
             return SE
+
         elif other.x - self.x == -1 and (
                 (self.x > 0 and other.y == self.y) or (self.x <= 0 and other.y - self.y == -1)):
             return SW
+
         elif other.x == self.x and other.y - self.y == -1:
             return W
+
         elif other.x - self.x == 1 and ((self.x >= 0 and other.y - self.y == -1) or (self.x < 0 and other.y == self.y)):
             return NW
 
 
 class Maze:
 
-    def __init__(self, size=10):
+    # Zna: rozmiar, listę komórek, kolejnosc komórek przy generowaniu, początkowa komorke, koncowo komorke, pozycje gracza
+
+    def __init__(self, size=15):
         self.size = size
         self.cells = []
         self.cells_queue = []
+
         for x in range(1 - self.size, self.size):
             for y in range(0, 2 * (self.size - 1) - abs(x) + 1):
                 self.cells.append(Cell(x, y, [NE, E, SE, SW, W, NW]))
@@ -98,6 +120,15 @@ class Maze:
                 if neighbour is not None:
                     yield neighbour
 
+    # losuje poczatek i koniec labiryntu
+    def start_end(self):
+        self.start_cell = random.choice(self.cells)
+        self.player_cell = self.start_cell
+        while True:
+            self.finish_cell = random.choice(self.cells)
+            if self.finish_cell != self.start_cell:
+                break
+
     # tworzy losowy labirynt
     def randomize(self):
 
@@ -126,4 +157,5 @@ class Maze:
     def generate(size):
         maze = Maze(size)
         maze.randomize()
+        maze.start_end()
         return maze
