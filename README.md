@@ -17,10 +17,14 @@
 
 ---
 
-Osoby tworzące projekt:
+### Osoby tworzące projekt:
 * Paweł Magnuszewski
 * Hanna Jarlaczyńska
 * Bartosz Kruczek
 * Konrad Pawlik
 * Łukasz Starzyk
 * Filip Chmielowiec
+
+### Nasze pomysły
+ - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2)
+ - [x] [Algorytm Prima](https://gist.github.com/hankaj/2a0ebd6c8d00be6dec85d05dc72855c5)
