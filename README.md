@@ -1,3 +1,21 @@
+
+# Sterowanie w labiryncie heksagonalnym:
+ Z racji tego, że z każdej z komórek może być maksymalnie 6 dróg wyjścia, to w labiryncie poruszamy się za pomocą sekwencji 2 odczytów z klawiatury (strzałki)
+ 
+ To znaczy, że jeśli chcemy przejść do komórki znajdującej się na prawo od aktualnej pozycji to 2 razy klikamy →
+ 
+ ##__Wszystkie możliwości:__
+ * __NE__ : → + ↑ lub ↑ + →
+ * __E__ : → + →
+ * __SE__ : → + ↓ lub ↓ + →
+ * __SW__ : ← + ↓ lub ↓ + ←
+ * __W__ : ← + ←
+ * __NW__ : ← + ↑ lub ↑ + ←
+
+
+
+
+
 # Project_Labyrinth
 ## Ogólny zamysł:
 > ### Naszym projektem jest generowanie labiryntu jednym, lub w późniejszej fazie kilkoma, algorytmami i przedstawienie tego w interfejsie graficznym

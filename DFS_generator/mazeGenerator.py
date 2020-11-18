@@ -41,7 +41,7 @@ class Cell:
         return 'Cell(' + str(self.x) + ', ' + str(self.y) + ', ' + str(self.walls) + ')'
 
     # sprawdza czy komórka z wszystkich stron otoczona jest ścianami
-    def is_walled(self):
+    def is_fully_walled(self):
         return len(self.walls) == 6
 
     # usuwa ścianę przez którą komórki się łączą (jest przejście)
@@ -140,7 +140,7 @@ class Maze:
         # print(current_cell, "numer komorki: " + str(visited_cells))     #zwraca kolejne komórki które są odwiedzane podczas tworzenia
 
         while visited_cells < len(self.cells):
-            neighbours = [c for c in self.neighbours(current_cell) if c.is_walled()]
+            neighbours = [c for c in self.neighbours(current_cell) if c.is_fully_walled()]
             if len(neighbours):
                 neighbour = random.choice(neighbours)
                 current_cell.connect(neighbour)

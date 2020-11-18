@@ -1,23 +1,94 @@
-import mazeGenerator
 import pygame
 import math
 
+import mazeGenerator
 
+
+
+# rysuje koniec labiryntu oraz pozycje gracza
 def drawPos():
-    n_st = maze.start_cell.x
-    m_st = maze.start_cell.y
-    x_st = x_0 + radius * (abs(n_st) + 2 * m_st) * offset
-    y_st = y_0 - 3 * radius * n_st / 2
-    pygame.draw.circle(screen, 0x9B04C9, (x_st, y_st), radius * (3 / 5))
-
     n_fn = maze.finish_cell.x
     m_fn = maze.finish_cell.y
     x_fn = x_0 + radius * (abs(n_fn) + 2 * m_fn) * offset
     y_fn = y_0 - 3 * radius * n_fn / 2
     pygame.draw.circle(screen, 0xFF0000, (x_fn, y_fn), radius * (3 / 5))
 
+    n_pl = maze.player_cell.x
+    m_pl = maze.player_cell.y
+    x_pl = x_0 + radius * (abs(n_pl) + 2 * m_pl) * offset
+    y_pl = y_0 - 3 * radius * n_pl / 2
+    pygame.draw.circle(screen, 0x9B04C9, (x_pl, y_pl), radius * (2 / 5))
+
     pygame.display.update()
 
+    pygame.draw.circle(screen, 0x000000, (x_pl, y_pl), radius * (2 / 5))
+
+
+def changePos(k1, k2):
+    if (k1 == pygame.K_UP and k2 == pygame.K_RIGHT) or (k2 == pygame.K_UP and k1 == pygame.K_RIGHT):
+
+        print("NE")
+
+        if mazeGenerator.NE not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.NE:
+                    maze.player_cell = c
+                    break
+
+    elif k1 == pygame.K_RIGHT and k2 == pygame.K_RIGHT:
+
+        print("E")
+
+        if mazeGenerator.E not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.E:
+                    maze.player_cell = c
+                    break
+
+    elif (k1 == pygame.K_DOWN and k2 == pygame.K_RIGHT) or (k2 == pygame.K_DOWN and k1 == pygame.K_RIGHT):
+
+        print("SE")
+
+        if mazeGenerator.SE not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.SE:
+                    maze.player_cell = c
+                    break
+
+    elif (k1 == pygame.K_DOWN and k2 == pygame.K_LEFT) or (k2 == pygame.K_DOWN and k1 == pygame.K_LEFT):
+
+        print("SW")
+
+        if mazeGenerator.SW not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.SW:
+                    maze.player_cell = c
+                    break
+
+    elif k1 == pygame.K_LEFT and k2 == pygame.K_LEFT:
+
+        print("W")
+
+        if mazeGenerator.W not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.W:
+                    maze.player_cell = c
+                    break
+
+    elif (k1 == pygame.K_UP and k2 == pygame.K_LEFT) or (k2 == pygame.K_UP and k1 == pygame.K_LEFT):
+
+        print("NW")
+
+        if mazeGenerator.NW not in maze.player_cell.walls:
+            for c in maze.neighbours(maze.player_cell):
+                if maze.player_cell.wall_to(c) == mazeGenerator.NW:
+                    maze.player_cell = c
+                    break
+
+    else:
+        print("Nie prawidłowy input")
+
+    drawPos()
 
 try:
     import pyautogui
@@ -29,12 +100,14 @@ except:
     mon_width = 1280
     mon_height = 720
 
+
 # preferowany rozmiar między 10, a 40
 while True:
-    size = int(input("Podaj rozmiar labiryntu(10-40): "))
-    if 10 <= size <= 40:
+    size = int(input("Podaj rozmiar labiryntu(10-30): "))
+    if 10 <= size <= 30:
         break
 
+# parametry okna i komorek labiryntu
 thick = 2
 colour = 0x458693
 offset = 7 / 8
@@ -56,6 +129,8 @@ print("Radius:", radius, "width:", win_width, "height:", win_height)
 
 Drawed = False
 exit = False
+key1 = 0
+key2 = 0
 
 while not exit:
     if not Drawed:
@@ -118,6 +193,18 @@ while not exit:
         Drawed = True
 
     for event in pygame.event.get():
+
+        if event.type == pygame.KEYDOWN:
+            if key1 == 0:
+                key1 = event.key
+                print(key1)
+            elif key2 == 0:
+                key2 = event.key
+                print(key2)
+                changePos(key1,key2)
+                key1 = 0
+                key2 = 0
+
         if event.type == pygame.QUIT:
             exit = True
 
