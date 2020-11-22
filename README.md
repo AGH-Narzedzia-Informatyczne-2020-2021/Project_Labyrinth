@@ -31,3 +31,7 @@
 > * A*
 > * Dijkstra
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
+
+
+Gist:
+[Kod generacyjny labirynt heksagonalny za pomocą algorytmu DFS](https://gist.github.com/Aszman/e69a89f9e6ad39e182a9f5537de0ebac)
