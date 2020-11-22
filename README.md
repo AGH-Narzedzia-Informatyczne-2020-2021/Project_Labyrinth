@@ -23,7 +23,7 @@ Osoby tworzące projekt:
 * Łukasz Starzyk
 * Konrad Pawlik
 * Filip Chmielowiec
-=======
+
 ### Osoby tworzące projekt:
 * Paweł Magnuszewski
 * Hanna Jarlaczyńska
