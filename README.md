@@ -28,3 +28,6 @@
 ### Nasze pomysły
  - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2)
  - [x] [Algorytm Prima](https://gist.github.com/hankaj/2a0ebd6c8d00be6dec85d05dc72855c5)
+ 
+ ### Off topic
+ - [x] [Funkcja oceniająca ttt10x10](https://gist.github.com/pawelmagnu/9979b34fe483e87a51be64f47c4cb172)
