@@ -5,15 +5,12 @@
 >
 > Przykłady algów generujących: https://en.wikipedia.org/wiki/Maze_generation_algorithm
 > 
-> Następnie będziemy implementować algorytmy przeszukiwania tego labiryntu z ich graficznymi wizualizacjami 
-> 
+> ~Następnie będziemy implementować algorytmy przeszukiwania tego labiryntu z ich graficznymi wizualizacjami~ **nie zdąrzymy** 
 >  Algorytmy takie jak np.: 
 > * BFS
 > * DFS
 > * A*
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
-
----
 
 ### Osoby tworzące projekt:
 * Paweł Magnuszewski
