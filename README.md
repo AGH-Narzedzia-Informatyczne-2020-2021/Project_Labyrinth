@@ -22,8 +22,8 @@
 * Filip Chmielowiec
 
 ### Nasze pomysły
- - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2)
- - [x] [Algorytm Prima](https://gist.github.com/hankaj/2a0ebd6c8d00be6dec85d05dc72855c5)
+ - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2)Hanna J
+ - [x] [Algorytm Prima](https://gist.github.com/hankaj/2a0ebd6c8d00be6dec85d05dc72855c5)Hanna J
  - [x] [Coś co chcielibyśmy zrobić, ale raczej nie zrobimy](https://gist.github.com/pawelmagnu/210e6fae1eca70812dbc8ca6bd195787) Paweł M
  - [x] [Kod generacyjny labiryntu heksagonalnego za pomocą algorytmu DFS](https://gist.github.com/Aszman/e69a89f9e6ad39e182a9f5537de0ebac) Łukasz
  
