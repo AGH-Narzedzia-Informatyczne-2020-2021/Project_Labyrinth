@@ -6,6 +6,7 @@
 > Przykłady algów generujących: https://en.wikipedia.org/wiki/Maze_generation_algorithm
 > 
 > ~Następnie będziemy implementować algorytmy przeszukiwania tego labiryntu z ich graficznymi wizualizacjami~ **nie zdąrzymy** 
+> 
 > Algorytmy takie jak np.: 
 > * BFS
 > * DFS
