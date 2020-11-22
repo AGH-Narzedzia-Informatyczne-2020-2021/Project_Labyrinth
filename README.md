@@ -11,8 +11,6 @@
 > * BFS
 > * DFS
 > * A*
-> * Prima
-> * Dijkstra
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
 
 ---
@@ -28,7 +26,7 @@
 ### Nasze pomysły
  - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2)
  - [x] [Algorytm Prima](https://gist.github.com/hankaj/2a0ebd6c8d00be6dec85d05dc72855c5)
- - [x] [Coś co chcielibyśmy zrobić, ale raczej nie zrobimy](https://gist.github.com/pawelmagnu/210e6fae1eca70812dbc8ca6bd195787)
+ - [x] [Coś co chcielibyśmy zrobić, ale raczej nie zrobimy](https://gist.github.com/pawelmagnu/210e6fae1eca70812dbc8ca6bd195787) Paweł M
  
  ### Off topic
- - [x] [Funkcja oceniająca ttt10x10](https://gist.github.com/pawelmagnu/9979b34fe483e87a51be64f47c4cb172)
+ - [x] [Funkcja oceniająca ttt10x10](https://gist.github.com/pawelmagnu/9979b34fe483e87a51be64f47c4cb172) Paweł M
