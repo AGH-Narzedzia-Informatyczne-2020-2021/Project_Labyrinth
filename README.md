@@ -17,8 +17,8 @@
 * Hanna Jarlaczyńska
 * Bartosz Kruczek
 * Konrad Pawlik
-* Łukasz Starzyk
 * Filip Chmielowiec
+* Łukasz Starzyk
 
 ### Nasze pomysły
  - [x] [Wyświetlanie z animacją](https://gist.github.com/hankaj/f5c6f89aaea238b0394f52c66cdb8dd2) Hanna J
