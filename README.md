@@ -10,17 +10,17 @@
 >  Algorytmy takie jak np.: 
 > * BFS
 > * DFS
-> * A*
 > * Prima
+> * A*
 > * Dijkstra
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
 
----
+-----
 
 Osoby tworzące projekt:
 * Paweł Magnuszewski
-* Hanna Jarlaczyńska
 * Bartosz Kruczek
-* Konrad Pawlik
+* Hanna Jarlaczyńska
 * Łukasz Starzyk
+* Konrad Pawlik
 * Filip Chmielowiec
