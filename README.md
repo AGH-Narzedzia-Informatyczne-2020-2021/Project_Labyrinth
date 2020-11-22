@@ -14,12 +14,6 @@
 > * A*
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
 
-### Nasze pomysły
- - [x] [Przykład funkcji rysującej](https://gist.github.com/Kojec1/b2477760ad6aea4c327c27b005373ef0)
- - [x] [Przydatna pętla for dla PyGame](https://gist.github.com/Kojec1/d6ceb12851f5503fb2a6bf590830a89e)
-=======
------
-
 Osoby tworzące projekt:
 * Paweł Magnuszewski
 * Bartosz Kruczek
