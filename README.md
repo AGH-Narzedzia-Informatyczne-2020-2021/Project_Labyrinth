@@ -40,6 +40,7 @@ Osoby tworzące projekt:
  - [x] [Przydatna pętla for dla PyGame](https://gist.github.com/Kojec1/d6ceb12851f5503fb2a6bf590830a89e) Konrad P
  - [x] [Prosty, autosrki algorytm generujący labirynt](https://gist.github.com/Pandoors/d074dd58b6364f82f930dc11365be6db) Bartosz K
  - [x] [Funkcja służąca do wyświetlania labiryntu w konsoli](https://gist.github.com/Pandoors/de0f4b7756d9e4cbf74168a1b44806cc) Bartosz K
+ - [x] [Bazowy algorytm dfs](https://gist.github.com/dkirxxr/0cda053fa412936609ace5935279a738) Filip C
  
  ### Off topic
  - [x] [Funkcja oceniająca ttt10x10](https://gist.github.com/pawelmagnu/9979b34fe483e87a51be64f47c4cb172) Paweł M
