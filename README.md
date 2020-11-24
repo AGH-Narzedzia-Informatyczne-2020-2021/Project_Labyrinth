@@ -44,4 +44,5 @@ Osoby tworzące projekt:
  
  ### Off topic
  - [x] [Funkcja oceniająca ttt10x10](https://gist.github.com/pawelmagnu/9979b34fe483e87a51be64f47c4cb172) Paweł M
+ - [x] [Funkcja badająca remis](https://gist.github.com/dkirxxr/6a5528aa18753f740670068a1b612bc3) Filip C
  
