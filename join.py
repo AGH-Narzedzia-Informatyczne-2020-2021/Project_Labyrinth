@@ -1,10 +1,11 @@
 import labirynth_generator as bk_lab
-import PySimpleGUI as sg
 import PyMazeDFS
 import PyMazeBFS
 import DFS_generator.mazeToGraphic as mazeToGraphic
 import prim as prim
 import binary_tree as bintree
+
+import PySimpleGUI as sg
 
 sg.theme('Topanga')
 
