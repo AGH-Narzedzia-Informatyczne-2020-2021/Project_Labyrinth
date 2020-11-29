@@ -48,10 +48,10 @@ def pawel():
 
 
 def lukasz_hex():
-    layout = [[sg.Text("Labirynt generwany algorytmem ", justification='center', font='Helvetica 15')],
-              [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
+    layout = [[sg.Text("Labirynt generowany algorytmem DFS ", justification='center', font='Helvetica 15')],
+              [sg.Text('Podaj promien labiryntu:', justification='center', font='Helvetica 15'),
                sg.InputText(size=(8, 5), font='Helvetica 18')],
-              [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
+              [sg.Button("Generuj labirynt", size=(15, 1), font='Helvetica 18')],
               [sg.Button("Zamknij okno", size=(10, 1), font='Helvetica 18')]
               ]
     # Create the Window
@@ -62,7 +62,7 @@ def lukasz_hex():
         print(event, values)
         if event in (None, 'Zamknij okno'):
             break
-        if event in (None, 'Generuj labirynt NxN'):
+        if event in (None, 'Generuj labirynt'):
             mazeToGraphic.generate(int(values[0]))
     window.close()
 
@@ -114,7 +114,7 @@ layout = [
     [sg.Button('DFS', size=(15, 1), font='Helvetica 18')],
     [sg.Button('BFS', size=(15, 1), font='Helvetica 18')],
     [sg.Button('BFS wersja 2', size=(15, 1), font='Helvetica 18')],
-    [sg.Button('aszman', size=(15, 1), font='Helvetica 18')],
+    [sg.Button('HEX DFS', size=(15, 1), font='Helvetica 18')],
     [sg.Button('pawel', size=(15, 1), font='Helvetica 18')],
     [sg.Button("Zakończ program", size=(10, 1), font='Helvetica 18')]
 ]
@@ -133,7 +133,7 @@ while True:
         bartek()
     if event in (None, 'BFS'):
         konrad_bfs()
-    if event in (None, 'aszman'):
+    if event in (None, 'HEX DFS'):
         lukasz_hex()
     if event in (None, 'pawel'):
         pawel()
