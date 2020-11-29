@@ -35,7 +35,7 @@ window = sg.Window('Wybór generatora', layout, size=(550, 280), element_justifi
 while True:
     event, values = window.read()
     print(event, values)
-    if event in (None, 'Zamknij okno'):
+    if event in (None, 'Zakończ program'):
         break
     if event in (None, 'Prosty BFS bez argumentów'):
         bartek()
