@@ -26,6 +26,7 @@ def bartek():
     window.close()
 
 
+
 def konrad_dfs():
     layout = [[sg.Text("Labirynt generwany algorytmem DFS", justification='center', font='Helvetica 15')],
               [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),

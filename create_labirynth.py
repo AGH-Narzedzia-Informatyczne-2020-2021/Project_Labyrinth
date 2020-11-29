@@ -3,7 +3,6 @@
 import random
 import pygame
 
-
 DIM = 15
 GRID_SIZE = 20
 
@@ -122,12 +121,10 @@ def get_y_coordinates(rows):
 maze_dim = 2 * DIM - 1
 screen = pygame.display.set_mode((maze_dim * GRID_SIZE, maze_dim * GRID_SIZE))
 
-
 edges_to_draw, graph = generate_maze(cells, 1)
 counter = 0
 
 color = (255, 255, 255)
-
 
 done = False
 while not done:
@@ -151,6 +148,5 @@ while not done:
             )
         counter += 1
         pygame.display.update()
-
 
 pygame.quit()
