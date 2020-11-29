@@ -68,7 +68,7 @@ def lukasz_hex():
 
 
 def konrad_dfs():
-    layout = [[sg.Text("Labirynt generwany algorytmem DFS", justification='center', font='Helvetica 15')],
+    layout = [[sg.Text("Labirynt generowany algorytmem DFS", justification='center', font='Helvetica 15')],
               [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
                sg.InputText(size=(8, 5), font='Helvetica 18')],
               [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
@@ -88,7 +88,7 @@ def konrad_dfs():
 
 
 def konrad_bfs():
-    layout = [[sg.Text("Labirynt generwany algorytmem BFS", justification='center', font='Helvetica 15')],
+    layout = [[sg.Text("Labirynt generowany algorytmem BFS", justification='center', font='Helvetica 15')],
               [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
                sg.InputText(size=(8, 5), font='Helvetica 18')],
               [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
