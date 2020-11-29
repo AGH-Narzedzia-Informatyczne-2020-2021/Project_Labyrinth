@@ -13,8 +13,12 @@ BLUE = (0, 0, 255)
 class Maze:
     def __init__(self, width, height):
         # upewniamy się, że liczba kolumn i wierszy jest nieparzysta, a jak parzysta to +1
-        self.width = width // 2 * 2 + 1
-        self.height = height // 2 * 2 + 1
+        if width % 2 == 0 and height % 200:
+            self.width = width
+            self.height = height
+        else:
+            self.width = width + 1
+            self.height = height + 1
         # wypełnia tablece WxH np dla (2, 2): [[True, True, True], [True, True, True], [True, True, True]]
         # True to sciana, False to ścieżka
         self.cells = [
@@ -73,8 +77,9 @@ class Maze:
         return string
 
 
-def generate():
-    maze = Maze(20, 20)
+def generate(s):
+
+    maze = Maze(s, s)
     maze.create_maze(1, 1)
 
     # maze = Maze(20, 20)
@@ -85,12 +90,12 @@ def generate():
     #     print(row, '\n')
 
     # Initialize the pygame
+    if s % 2 != 0:
+        s = s + 1
     pygame.init()
-    WIDTH = 600
     once = False
-    HEIGHT = 600
     pygame.init()
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((s * 30 - 30, s * 30 - 30))
     pygame.display.set_caption("Generator labiryntów")
     clock = pygame.time.Clock()
     running = True
@@ -104,14 +109,15 @@ def generate():
             for y in range(maze.height):
                 for x in range(maze.width):
                     if maze.cells[y][x] == 0:
-                        pygame.draw.rect(screen, WHITE, (x * 32 - 32, y * 32 - 32, 32, 32))
+                        pygame.draw.rect(screen, WHITE, (x * 30 - 30, y * 30 - 30, 30, 30))
                         pygame.display.update()
                         time.sleep(.003)
                         once = True
 
-       # pygame.display.flip()
+    # pygame.display.flip()
     pygame.quit()
+
 
 # commented for the sake of join.py class
 # if __name__ == "__main__":
-#     main()
+#     generate()
