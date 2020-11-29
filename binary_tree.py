@@ -62,7 +62,7 @@ def pawel_tree(size):
         pygame.display.update()
         pygame.time.delay(dlay)
     
-    
+
     for i in range(0,last+1,2):
         for j in range(0,last+1,2):
             Connect(i,j)
