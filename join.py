@@ -31,7 +31,7 @@ def bartek():
 
 
 def hania():
-    layout = [[sg.Text("Labirynt generwany algorytmem BFS wersja 2", justification='center', font='Helvetica 15')],
+    layout = [[sg.Text("Labirynt generwany algorytmem Prima", justification='center', font='Helvetica 15')],
               [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
                sg.InputText(size=(8, 5), font='Helvetica 18')],
               [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
@@ -139,7 +139,7 @@ layout = [
     [sg.Button('BFS wersja 2', size=(15, 1), font='Helvetica 20')],
     [sg.Button('HEX DFS', size=(15, 1), font='Helvetica 20')],
     [sg.Button('Pawel', size=(15, 1), font='Helvetica 20')],
-    [sg.Button('Hania', size=(15, 1), font='Helvetica 20')],
+    [sg.Button('Prim', size=(15, 1), font='Helvetica 20')],
     [sg.Button("Zakończ program", size=(10, 1), font='Helvetica 18')]
 ]
 # Create the Window
@@ -161,6 +161,6 @@ while True:
         lukasz_hex()
     if event in (None, 'Pawel'):
         pawel()
-    if event in (None, 'Hania'):
+    if event in (None, 'Prim'):
         hania()
 window.close()

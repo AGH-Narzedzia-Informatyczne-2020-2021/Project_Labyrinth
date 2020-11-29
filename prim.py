@@ -76,8 +76,6 @@ def hania_prim(s):
         elif grid[a][b]==0:
             pygame.draw.rect(screen,black,[a*grid_size,b*grid_size,grid_size,grid_size])
     
-        pygame.display.update()
-        pygame.time.delay(10)
 
     screen = pygame.display.set_mode((size * grid_size, size * grid_size))
 
@@ -89,7 +87,9 @@ def hania_prim(s):
         for i in range(size):
             for j in range(size):
                 Draw(j,i)
-   
+        pygame.display.update()
+
+
     pygame.quit()
 
 
