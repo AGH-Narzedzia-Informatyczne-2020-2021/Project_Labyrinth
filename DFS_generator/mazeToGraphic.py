@@ -144,5 +144,3 @@ def generate(size=15):
                 exit = True
 
     pygame.quit()
-
-generate()
