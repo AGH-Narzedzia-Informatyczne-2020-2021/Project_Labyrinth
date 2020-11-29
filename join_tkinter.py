@@ -265,7 +265,7 @@ H.pack(pady=10)
 H = Button(root, text="Generator Pawla", command=lambda: pawel())
 H.pack(pady=10)
 
-L = Button(root, text="Generator Pawla", command=lambda: lukasz_hex())
+L = Button(root, text="Generator Lukasza", command=lambda: lukasz_hex())
 L.pack(pady=10)
 
 P1 = Button(root, text="Generator Konrada dfs", command=lambda: konrad_dfs())
