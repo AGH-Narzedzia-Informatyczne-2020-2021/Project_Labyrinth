@@ -73,7 +73,7 @@ class Maze:
         return string
 
 
-def main():
+def generate():
     maze = Maze(20, 20)
     maze.create_maze(1, 1)
 
@@ -112,6 +112,6 @@ def main():
        # pygame.display.flip()
     pygame.quit()
 
-
-if __name__ == "__main__":
-    main()
+# commented for the sake of join.py class
+# if __name__ == "__main__":
+#     main()
