@@ -1,6 +1,6 @@
 import pygame
 
-import mazeGenerator
+import DFS_generator.mazeGenerator as mazeGenerator
 
 
 def changePos(k1, k2, maze):

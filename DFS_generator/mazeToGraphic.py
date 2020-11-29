@@ -1,8 +1,8 @@
 import pygame
 import math
 
-import mazeGenerator
-import Controls
+import DFS_generator.mazeGenerator as mazeGenerator
+import DFS_generator.Controls as Controls
 
 
 # rysuje koniec labiryntu oraz pozycje gracza

@@ -8,7 +8,6 @@ def pawel_tree(size):
     white =(255, 255, 255)
     black =(0, 0, 0)
 
-    size = int(input("Size of the maze: "))
     in_pixels = 10
     dlay = 10
 

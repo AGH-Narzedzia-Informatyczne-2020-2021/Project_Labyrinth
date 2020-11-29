@@ -2,7 +2,9 @@ import labirynth_generator as bk_lab
 import PySimpleGUI as sg
 import PyMazeDFS
 import PyMazeBFS
-
+import DFS_generator.mazeToGraphic as mazeToGraphic
+import prim as prim
+import binary_tree as bintree
 sg.theme('Topanga')
 
 
@@ -25,6 +27,44 @@ def bartek():
             bk_lab.generate(int(values[0]))
     window.close()
 
+def pawel():
+    layout = [[sg.Text("Labirynt generwany algorytmem BFS wersja 2", justification='center', font='Helvetica 15')],
+              [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
+               sg.InputText(size=(8, 5), font='Helvetica 18')],
+              [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
+              [sg.Button("Zamknij okno", size=(10, 1), font='Helvetica 18')]
+              ]
+    # Create the Window
+    window = sg.Window('Generator labiryntów', layout, size=(500, 200), element_justification='c')
+    # Event Loop to process "events"
+    while True:
+        event, values = window.read()
+        print(event, values)
+        if event in (None, 'Zamknij okno'):
+            break
+        if event in (None, 'Generuj labirynt NxN'):
+            bintree.pawel_tree(int(values[0]))
+    window.close()
+
+
+def lukasz_hex():
+    layout = [[sg.Text("Labirynt generwany algorytmem ", justification='center', font='Helvetica 15')],
+              [sg.Text('Podaj wymiar N labiryntu:', justification='center', font='Helvetica 15'),
+               sg.InputText(size=(8, 5), font='Helvetica 18')],
+              [sg.Button("Generuj labirynt NxN", size=(15, 1), font='Helvetica 18')],
+              [sg.Button("Zamknij okno", size=(10, 1), font='Helvetica 18')]
+              ]
+    # Create the Window
+    window = sg.Window('Generator labiryntów', layout, size=(500, 200), element_justification='c')
+    # Event Loop to process "events"
+    while True:
+        event, values = window.read()
+        print(event, values)
+        if event in (None, 'Zamknij okno'):
+            break
+        if event in (None, 'Generuj labirynt NxN'):
+            mazeToGraphic.generate(int(values[0]))
+    window.close()
 
 
 def konrad_dfs():
@@ -74,6 +114,8 @@ layout = [
     [sg.Button('DFS', size=(15, 1), font='Helvetica 18')],
     [sg.Button('BFS', size=(15, 1), font='Helvetica 18')],
     [sg.Button('BFS wersja 2', size=(15, 1), font='Helvetica 18')],
+    [sg.Button('aszman', size=(15, 1), font='Helvetica 18')],
+    [sg.Button('pawel', size=(15, 1), font='Helvetica 18')],
     [sg.Button("Zakończ program", size=(10, 1), font='Helvetica 18')]
 ]
 # Create the Window
@@ -91,4 +133,8 @@ while True:
         bartek()
     if event in (None, 'BFS'):
         konrad_bfs()
+    if event in (None, 'aszman'):
+        lukasz_hex()
+    if event in (None, 'pawel'):
+        pawel()
 window.close()
