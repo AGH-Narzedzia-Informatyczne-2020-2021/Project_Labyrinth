@@ -2,112 +2,116 @@ import random
 import pygame
 import time
 
-white = (255,250,250)
-red =  (255,0,0)
+def generate():
+    white = (255,250,250)
+    red =  (255,0,0)
 
-visited = []
-queue = []
-x = 1
-y = 1
+    visited = []
+    queue = []
+    x = 1
+    y = 1
 
-#Ustawiamy parametry okna dla pygame
-print("Podaj rozmiar labiryntu")
-s = input()
+    #Ustawiamy parametry okna dla pygame
+    s = int(input("Podaj rozmiar labiryntu\n"))
 
-screen = pygame.display.set_mode((int(s)*int('20'),int(s)*int('20')))
-pygame.display.set_caption("Project Labyrinth")
+    if(s % 2 == 0): s+=1
 
-#Tworzymy przestrzeń w której ma powstać labirynt
-grid = {(x,y):1 for x in range(1, int(s)+int('1')) for y in range(1, int(s)+int('1'))}
+    screen = pygame.display.set_mode((s*20,s*20))
+    pygame.display.set_caption("Project Labyrinth")
 
-def CheckNeighbours():  #Funkcja sprawdza ile mamy wolnych sąsiednich kratek
-    if (x + 2, y) not in visited and (x+2,y) in grid:
-        neighb.append("E")
+    #Tworzymy przestrzeń w której ma powstać labirynt
+    grid = {(x,y):1 for x in range(1, s+1) for y in range(1, s+1)}
 
-    if (x - 2, y) not in visited and (x-2,y) in grid:
-        neighb.append("W")
-            
-    if (x, y + 2) not in visited and (x,y+2) in grid:
-        neighb.append("N")
+    def CheckNeighbours():  #Funkcja sprawdza ile mamy wolnych sąsiednich kratek
+        if (x + 2, y) not in visited and (x+2,y) in grid:
+            neighb.append("E")
 
-    if (x, y - 2) not in visited and (x,y-2) in grid:
-        neighb.append("S")
+        if (x - 2, y) not in visited and (x-2,y) in grid:
+            neighb.append("W")
+                
+        if (x, y + 2) not in visited and (x,y+2) in grid:
+            neighb.append("N")
 
-#Funkcje Draw* rysują nam ścieżkę
-def DrawLeft():
-    pygame.draw.rect(screen, white, ((x+1)*20-20,y*20-20,20,20))
+        if (x, y - 2) not in visited and (x,y-2) in grid:
+            neighb.append("S")
+
+    #Funkcje Draw* rysują nam ścieżkę
+    def DrawLeft():
+        pygame.draw.rect(screen, white, ((x+1)*20-20,y*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.001)
+        
+    def DrawRight():
+        pygame.draw.rect(screen, white, ((x-1)*20-20,y*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.001)
+
+    def DrawUp():
+        pygame.draw.rect(screen, white, (x*20-20,(y-1)*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.001)
+
+    def DrawDown():
+        pygame.draw.rect(screen, white, (x*20-20,(y+1)*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.001)
+
+    def DrawPosition():
+        pygame.draw.rect(screen, red, (x*20-20,y*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.03)
+
+        pygame.draw.rect(screen, white, (x*20-20,y*20-20,20,20))
+        pygame.display.update()
+        time.sleep(.001)
+
+    #Ustawiamy parametry dla pierwszej komórki
+    queue.append((x,y))
+    visited.append((x,y))
+    pygame.draw.rect(screen, white, (0,0,20,20))
     pygame.display.update()
-    time.sleep(.001)
-    
-def DrawRight():
-    pygame.draw.rect(screen, white, ((x-1)*20-20,y*20-20,20,20))
-    pygame.display.update()
-    time.sleep(.001)
 
-def DrawUp():
-    pygame.draw.rect(screen, white, (x*20-20,(y-1)*20-20,20,20))
-    pygame.display.update()
-    time.sleep(.001)
+    #Rozpoczynamy główną pętle
+    exit = False
+    while not exit:
+        while len(queue) > 0:
 
-def DrawDown():
-    pygame.draw.rect(screen, white, (x*20-20,(y+1)*20-20,20,20))
-    pygame.display.update()
-    time.sleep(.001)
+            neighb = []
+            CheckNeighbours()   #Sprawdzamy dla aktualnej pozycji czy istnieją wolni "sąsiedzi"
 
-def DrawPosition():
-    pygame.draw.rect(screen, red, (x*20-20,y*20-20,20,20))
-    pygame.display.update()
-    time.sleep(.03)
+            if len(neighb) > 0: #Jeżeli istnieją to wybieramy losowo jedną kratkę oraz rysujemy ścieżkę
+                random_neighb = (random.choice(neighb))
 
-    pygame.draw.rect(screen, white, (x*20-20,y*20-20,20,20))
-    pygame.display.update()
-    time.sleep(.001)
+                if random_neighb == "E":
+                    x = x + 2
+                    DrawRight()
 
-#Ustawiamy parametry dla pierwszej komórki
-queue.append((x,y))
-visited.append((x,y))
-pygame.draw.rect(screen, white, (0,0,20,20))
-pygame.display.update()
+                elif random_neighb == "W":
+                    x = x - 2
+                    DrawLeft()
 
-#Rozpoczynamy główną pętle
-exit = False
-while not exit:
-    while len(queue) > 0:
+                elif random_neighb == "N":
+                    y = y + 2
+                    DrawUp()
 
-        neighb = []
-        CheckNeighbours()   #Sprawdzamy dla aktualnej pozycji czy istnieją wolni "sąsiedzi"
+                elif random_neighb == "S":
+                    y = y - 2
+                    DrawDown()
 
-        if len(neighb) > 0: #Jeżeli istnieją to wybieramy losowo jedną kratkę oraz rysujemy ścieżkę
-            random_neighb = (random.choice(neighb))
+                DrawPosition()
+                queue.append((x,y))
+                visited.append((x,y))   #Zaznaczamy nową pozycję jako odwiedzoną
 
-            if random_neighb == "E":
-                x = x + 2
-                DrawRight()
+            else:   #Jeżeli natomiast wolni "sąsiedzi" nie istnieją cofamy się do poprzedniej odwiedzonej kratki
+                x, y = queue.pop() 
 
-            elif random_neighb == "W":
-                x = x - 2
-                DrawLeft()
+            for event in pygame.event.get():    #Pętla for pozwala nam w dowolnym momencie opuścić program
+                if event.type == pygame.QUIT:
+                    exit = True
 
-            elif random_neighb == "N":
-                y = y + 2
-                DrawUp()
-
-            elif random_neighb == "S":
-                y = y - 2
-                DrawDown()
-
-            DrawPosition()
-            queue.append((x,y))
-            visited.append((x,y))   #Zaznaczamy nową pozycję jako odwiedzoną
-
-        else:   #Jeżeli natomiast wolni "sąsiedzi" nie istnieją cofamy się do poprzedniej odwiedzonej kratki
-            x, y = queue.pop() 
-
-        for event in pygame.event.get():    #Pętla for pozwala nam w dowolnym momencie opuścić program
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit = True
+    pygame.quit()
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit = True
-pygame.quit()
+# generate()
