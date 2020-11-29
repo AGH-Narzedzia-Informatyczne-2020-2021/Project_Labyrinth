@@ -1,2 +1,2 @@
 pygame
-PySimpleGUI
+PySimpleGUI==4.32.1
