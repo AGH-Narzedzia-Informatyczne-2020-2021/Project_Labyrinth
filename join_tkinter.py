@@ -177,7 +177,7 @@ def hania():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem Prima')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -259,7 +259,7 @@ my_label2.pack()
 B = Button(root, text="BFS wersja 2", command=lambda: bartek())
 B.pack(pady=10)
 
-H = Button(root, text="Generator Hani", command=lambda: hania())
+H = Button(root, text="Prim", command=lambda: hania())
 H.pack(pady=10)
 
 H = Button(root, text="Generator Pawla", command=lambda: pawel())
