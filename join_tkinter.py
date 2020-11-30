@@ -29,7 +29,7 @@ def konrad_bfs():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -66,7 +66,7 @@ def konrad_dfs():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -103,10 +103,10 @@ def lukasz_hex():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt heksagonalny generowany algorytmem DFS')
     my_label.pack(pady=10)
 
-    my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
+    my_label2 = Label(root, text=f'Podaj promien N labiryntu (2-30):')
     my_label2.pack(pady=10)
 
     canvas1 = Canvas(root, width=90, height=75)
@@ -115,7 +115,7 @@ def lukasz_hex():
     entry1 = Entry(root)
     canvas1.create_window(40, 25, window=entry1)
 
-    B = Button(root, text="Generuj Labirynt dla NxN", command=lambda: mazeToGraphic.generate(int(entry1.get())))
+    B = Button(root, text="Generuj Labirynt dla promienia N", command=lambda: mazeToGraphic.generate(int(entry1.get())))
     B.pack()
 
     D = Button(root, text="Zamknij okno", command=lambda: root.destroy())
@@ -140,7 +140,7 @@ def pawel():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -177,7 +177,7 @@ def hania():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -214,7 +214,7 @@ def bartek():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generwany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -265,7 +265,7 @@ H.pack(pady=10)
 H = Button(root, text="Generator Pawla", command=lambda: pawel())
 H.pack(pady=10)
 
-L = Button(root, text="Generator Lukasza", command=lambda: lukasz_hex())
+L = Button(root, text="Heksagonalny DFS", command=lambda: lukasz_hex())
 L.pack(pady=10)
 
 P1 = Button(root, text="Generator Konrada dfs", command=lambda: konrad_dfs())

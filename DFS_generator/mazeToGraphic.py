@@ -41,7 +41,11 @@ def generate(size=15):
     #       if 2 <= size <= 25:
     #       break
 
+    if size <= 1 or size > 30:
+        size = 15
+
     # parametry okna i komorek labiryntu
+
     thick = 2
     colour = 0x458693
     offset = 7 / 8
