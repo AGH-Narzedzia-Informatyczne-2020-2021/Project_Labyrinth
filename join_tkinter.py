@@ -29,7 +29,7 @@ def konrad_bfs():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -66,7 +66,7 @@ def konrad_dfs():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem DFS')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
