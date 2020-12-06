@@ -58,9 +58,6 @@ def pawel_tree(size):
         elif grid[a][b]==0:
             pygame.draw.rect(screen,black,[a*in_pixels,b*in_pixels,in_pixels,in_pixels])
     
-        pygame.display.update()
-        pygame.time.delay(dlay)
-    
 
     for i in range(0,last+1,2):
         for j in range(0,last+1,2):
@@ -85,6 +82,7 @@ def pawel_tree(size):
         for i in range(bordur):
             for j in range(bordur):
                 Draw(j,i)
+        pygame.display.update()
    
     pygame.quit()
     
