@@ -9,7 +9,7 @@ def pawel_tree(size):
     black =(0, 0, 0)
 
     in_pixels = 10
-    dlay = 10
+    dlay = int(1000/(size**2))
 
     bordur = size*2 + 1
     last = size*2 -2
