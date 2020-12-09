@@ -70,7 +70,6 @@ class Cell:
         elif other.x - self.x == 1 and ((self.x >= 0 and other.y - self.y == -1) or (self.x < 0 and other.y == self.y)):
             return NW
 
-
 class Maze:
 
     # Zna: rozmiar, listę komórek, kolejnosc komórek przy generowaniu, początkowa komorke, koncowo komorke, pozycje gracza
