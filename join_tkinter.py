@@ -8,6 +8,9 @@ import prim as prim
 import binary_tree as bintree
 
 
+# Plik zawierajacy funkcje odpowiedzialne za wyswietlanie interfejsu do wyboru i generacji labiryntu
+
+# kiedy chcesz zamknac
 def on_closing():
     if msgbox.askokcancel("Quit", "Do you want to quit?"):
         root.quit()
@@ -214,7 +217,9 @@ def bartek():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
+    my_label = Label(root,
+                     text=f'Labirynt generowany w oparciu o algorytm BFS,\n'
+                          f' korzystając przy tym z biblioteki random')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -256,11 +261,11 @@ my_label.pack(pady=10)
 my_label2 = Label(root, text=f'Naciśnięcie jednego z poniższych przycisków otworzy nowe okno konfiguracji')
 my_label2.pack()
 
-B = Button(root, text="BFS wersja 2", command=lambda: bartek())
-B.pack(pady=10)
-
 H = Button(root, text="Prim", command=lambda: hania())
 H.pack(pady=10)
+
+B = Button(root, text="BFS-random", command=lambda: bartek())
+B.pack(pady=10)
 
 H = Button(root, text="Drzewo Binarne", command=lambda: pawel())
 H.pack(pady=10)
@@ -271,7 +276,7 @@ L.pack(pady=10)
 P1 = Button(root, text="Generator Konrada dfs", command=lambda: konrad_dfs())
 P1.pack(pady=10)
 
-P2 = Button(root, text="Generator konrada bfs", command=lambda: konrad_bfs())
+P2 = Button(root, text="Generator Konrada bfs", command=lambda: konrad_bfs())
 P2.pack(pady=10)
 
 Q = Button(text="Zamknij program", command=lambda: root.quit())

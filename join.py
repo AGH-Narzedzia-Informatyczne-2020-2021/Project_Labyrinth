@@ -1,3 +1,5 @@
+# POPRZEDNI UI. ZOSTAŁ JEDNAK ODRZUCONY I PRZESZLIŚMY NA TKINTER.
+
 # import labirynth_generator as bk_lab
 # import PyMazeDFS
 # import PyMazeBFS
