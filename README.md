@@ -14,14 +14,6 @@
 > * A*
 > * https://en.wikipedia.org/wiki/Maze_solving_algorithm
 
-Osoby tworzące projekt:
-* Paweł Magnuszewski
-* Bartosz Kruczek
-* Hanna Jarlaczyńska
-* Łukasz Starzyk
-* Konrad Pawlik
-* Filip Chmielowiec
-
 ### Osoby tworzące projekt:
 * Paweł Magnuszewski
 * Hanna Jarlaczyńska
