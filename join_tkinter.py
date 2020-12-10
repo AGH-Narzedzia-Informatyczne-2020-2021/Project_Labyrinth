@@ -140,7 +140,7 @@ def pawel():
 
     root.geometry(f'{app_width}x{app_height}+{int(x)}+{int(y)}')
 
-    my_label = Label(root, text=f'Labirynt generowany algorytmem BFS wersja 2')
+    my_label = Label(root, text=f'Labirynt generowany algorytmem drzewa binarnego')
     my_label.pack(pady=10)
 
     my_label2 = Label(root, text=f'Podaj wymiar N labiryntu:')
@@ -262,7 +262,7 @@ B.pack(pady=10)
 H = Button(root, text="Prim", command=lambda: hania())
 H.pack(pady=10)
 
-H = Button(root, text="Generator Pawla", command=lambda: pawel())
+H = Button(root, text="Drzewo Binarne", command=lambda: pawel())
 H.pack(pady=10)
 
 L = Button(root, text="Heksagonalny DFS", command=lambda: lukasz_hex())
