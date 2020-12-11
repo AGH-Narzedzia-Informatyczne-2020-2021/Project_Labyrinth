@@ -11,17 +11,18 @@ def drawPos(maze, x_0, y_0, radius, offset, screen):
     m_fn = maze.finish_cell.y
     x_fn = x_0 + radius * (abs(n_fn) + 2 * m_fn) * offset
     y_fn = y_0 - 3 * radius * n_fn / 2
-    pygame.draw.circle(screen, 0xFF0000, (x_fn, y_fn), radius * (3 / 5))
+    pygame.draw.circle(screen, 0xFF0000, (int(x_fn), int(y_fn)), int(radius * (3 / 5)))
+
 
     n_pl = maze.player_cell.x
     m_pl = maze.player_cell.y
     x_pl = x_0 + radius * (abs(n_pl) + 2 * m_pl) * offset
     y_pl = y_0 - 3 * radius * n_pl / 2
-    pygame.draw.circle(screen, 0x9B04C9, (x_pl, y_pl), radius * (2 / 5))
+    pygame.draw.circle(screen, 0x9B04C9, (int(x_pl), int(y_pl)), int(radius * (2 / 5)))
 
     pygame.display.update()
 
-    pygame.draw.circle(screen, 0x000000, (x_pl, y_pl), radius * (2 / 5))
+    pygame.draw.circle(screen, 0x000000, (int(x_pl), int(y_pl)), int(radius * (2 / 5)))
 
 
 def generate(size=15):
@@ -135,10 +136,8 @@ def generate(size=15):
             if event.type == pygame.KEYDOWN:
                 if key1 == 0:
                     key1 = event.key
-                    print(key1)
                 elif key2 == 0:
                     key2 = event.key
-                    print(key2)
                     Controls.changePos(key1, key2, maze)
                     key1 = 0
                     key2 = 0
